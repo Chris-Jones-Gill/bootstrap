@@ -1,21 +1,21 @@
 /* =============================================================
- * bootstrap-typeahead.js v2.0.4
- * http://twitter.github.com/bootstrap/javascript.html#typeahead
- * =============================================================
- * Copyright 2012 Twitter, Inc.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- * ============================================================ */
+* bootstrap-typeahead.js v2.0.4
+* http://twitter.github.com/bootstrap/javascript.html#typeahead
+* =============================================================
+* Copyright 2012 Twitter, Inc.
+*
+* Licensed under the Apache License, Version 2.0 (the "License");
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+*
+* http://www.apache.org/licenses/LICENSE-2.0
+*
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+* ============================================================ */
 
 
 !function($){
@@ -24,7 +24,7 @@
 
 
  /* TYPEAHEAD PUBLIC CLASS DEFINITION
-  * ================================= */
+* ================================= */
 
   var Typeahead = function (element, options) {
     this.$element = $(element)
@@ -77,9 +77,7 @@
     }
 
   , lookup: function (event) {
-      var that = this
-        , items
-        , q
+      var items
 
       this.query = this.$element.val()
 
@@ -87,7 +85,15 @@
         return this.shown ? this.hide() : this
       }
 
-      items = $.grep(this.source, function (item) {
+      items = $.isFunction(this.source) ? this.source(this.query, $.proxy(this.process, this)) : this.source
+
+      return items ? this.process(items) : this
+    }
+
+  , process: function (items) {
+      var that = this
+
+      items = $.grep(items, function (item) {
         return that.matcher(item)
       })
 
@@ -145,7 +151,7 @@
         , next = active.next()
 
       if (!next.length) {
-        next = $(this.$menu.find('li')[0])
+        next = $(this.$menu.children('li')[0])
       }
 
       next.addClass('active')
@@ -156,7 +162,7 @@
         , prev = active.prev()
 
       if (!prev.length) {
-        prev = this.$menu.find('li').last()
+        prev = this.$menu.children('li').last()
       }
 
       prev.addClass('active')
@@ -164,17 +170,50 @@
 
   , listen: function () {
       this.$element
-        .on('blur',     $.proxy(this.blur, this))
+        .on('blur', $.proxy(this.blur, this))
         .on('keypress', $.proxy(this.keypress, this))
-        .on('keyup',    $.proxy(this.keyup, this))
+        .on('keyup', $.proxy(this.keyup, this))
 
       if ($.browser.webkit || $.browser.msie) {
-        this.$element.on('keydown', $.proxy(this.keypress, this))
+        this.$element.on('keydown', $.proxy(this.keydown, this))
       }
 
-      this.$menu
-        .on('click', $.proxy(this.click, this))
-        .on('mouseenter', 'li', $.proxy(this.mouseenter, this))
+      this.$menu.on('click', $.proxy(this.click, this))
+      this.$menu.children('li').on('mouseenter', $.proxy(this.mouseenter, this))
+    }
+
+  , move: function (e) {
+      if (!this.shown) return
+
+      switch(e.keyCode) {
+        case 9: // tab
+        case 13: // enter
+        case 27: // escape
+          e.preventDefault()
+          break
+
+        case 38: // up arrow
+          e.preventDefault()
+          this.prev()
+          break
+
+        case 40: // down arrow
+          e.preventDefault()
+          this.next()
+          break
+      }
+
+      e.stopPropagation()
+    }
+
+  , keydown: function (e) {
+      this.suppressKeyPressRepeat = !~[40,38,9,13,27].indexOf(e.keyCode)
+      this.move(e)
+    }
+
+  , keypress: function (e) {
+      if (this.suppressKeyPressRepeat) return
+      this.move(e)
     }
 
   , keyup: function (e) {
@@ -202,32 +241,6 @@
       e.preventDefault()
   }
 
-  , keypress: function (e) {
-      if (!this.shown) return
-
-      switch(e.keyCode) {
-        case 9: // tab
-        case 13: // enter
-        case 27: // escape
-          e.preventDefault()
-          break
-
-        case 38: // up arrow
-          if (e.type != 'keydown') break
-          e.preventDefault()
-          this.prev()
-          break
-
-        case 40: // down arrow
-          if (e.type != 'keydown') break
-          e.preventDefault()
-          this.next()
-          break
-      }
-
-      e.stopPropagation()
-    }
-
   , blur: function (e) {
       var that = this
       setTimeout(function () { that.hide() }, 150)
@@ -248,7 +261,7 @@
 
 
   /* TYPEAHEAD PLUGIN DEFINITION
-   * =========================== */
+* =========================== */
 
   $.fn.typeahead = function (option) {
     return this.each(function () {
@@ -271,7 +284,7 @@
 
 
  /* TYPEAHEAD DATA-API
-  * ================== */
+* ================== */
 
   $(function () {
     $('body').on('focus.typeahead.data-api', '[data-provide="typeahead"]', function (e) {

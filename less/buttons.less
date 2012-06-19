@@ -11,9 +11,9 @@
   .ie7-inline-block();
   padding: 4px 10px 4px;
   margin-bottom: 0; // For input.btn
-  font-size: @baseFontSize;
-  line-height: @baseLineHeight;
-  *line-height: 20px;
+  #font > .kwd-font-size(@baseFontSize);
+  #font > .kwd-line-height(@baseLineHeight);
+  #font > .kwd-line-height-star(20);
   color: @grayDark;
   text-align: center;
   text-shadow: 0 1px 1px rgba(255,255,255,.75);
@@ -73,7 +73,7 @@
 // Large
 .btn-large {
   padding: 9px 14px;
-  font-size: @baseFontSize + 2px;
+  #font > .kwd-font-size(@baseFontSize + 2);
   line-height: normal;
   .border-radius(5px);
 }
@@ -84,8 +84,8 @@
 // Small
 .btn-small {
   padding: 5px 9px;
-  font-size: @baseFontSize - 2px;
-  line-height: @baseLineHeight - 2px;
+  #font > .kwd-font-size(@baseFontSize - 2);
+  #font > .kwd-line-height(@baseLineHeight - 2);
 }
 .btn-small [class^="icon-"] {
   margin-top: -1px;
@@ -94,8 +94,8 @@
 // Mini
 .btn-mini {
   padding: 2px 6px;
-  font-size: @baseFontSize - 2px;
-  line-height: @baseLineHeight - 4px;
+  #font > .kwd-font-size(@baseFontSize - 2);
+  #font > .kwd-line-height(@baseLineHeight - 4);
 }
 
 

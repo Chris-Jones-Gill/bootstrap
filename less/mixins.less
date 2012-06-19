@@ -81,13 +81,10 @@
 // Placeholder text
 // -------------------------
 .placeholder(@color: @placeholderText) {
-  &:-moz-placeholder {
+  :-moz-placeholder {
     color: @color;
   }
-  &:-ms-input-placeholder {
-    color: @color;
-  }
-  &::-webkit-input-placeholder {
+  ::-webkit-input-placeholder {
     color: @color;
   }
 }
@@ -128,10 +125,33 @@
       font-family: @monoFontFamily;
     }
   }
-  .shorthand(@size: @baseFontSize, @weight: normal, @lineHeight: @baseLineHeight) {
-    font-size: @size;
+  .kwd-font-size(@font-size: 16){
+	@rem: (@font-size / 10);
+	font-size: @font-size * 1px;
+	font-size: ~"@{rem}rem"; 
+  }
+  .kwd-height(@height: 16){
+	@rem: (@height / 10);
+	height: @height * 1px;
+	height: ~"@{rem}rem"; 
+  }
+  .kwd-line-height(@line-height: 16){
+	@rem: (@line-height / 10);
+	line-height: @line-height * 1px;
+	line-height: ~"@{rem}rem"; 
+  }
+  .kwd-line-height-star(@line-height: 16){
+	@rem: (@line-height / 10);
+	*line-height: @line-height * 1px;
+	*line-height: ~"@{rem}rem"; 
+  }
+
+    .shorthand(@size: @baseFontSize, @weight: normal, @lineHeight: @baseLineHeight) {
+    //font-size: @size;
+    .kwd-font-size(@size);
     font-weight: @weight;
-    line-height: @lineHeight;
+    //line-height: @lineHeight;
+    .kwd-line-height(@lineHeight);
   }
   .serif(@size: @baseFontSize, @weight: normal, @lineHeight: @baseLineHeight) {
     #font > #family > .serif;
@@ -169,8 +189,6 @@
     color: @textColor;
   }
   // Style inputs accordingly
-  .checkbox,
-  .radio,
   input,
   select,
   textarea {
@@ -317,16 +335,6 @@
           column-gap: @columnGap;
 }
 
-// Optional hyphenation
-.hyphens(@mode: auto) {
-  word-wrap: break-word;
-  -webkit-hyphens: @mode;
-     -moz-hyphens: @mode;
-      -ms-hyphens: @mode;
-       -o-hyphens: @mode;
-          hyphens: @mode;
-}
-
 // Opacity
 .opacity(@opacity) {
   opacity: @opacity / 100;
@@ -432,7 +440,7 @@
 // Horizontal dividers
 // -------------------------
 // Dividers (basically an hr) within dropdowns and nav lists
-.nav-divider(@top: #e5e5e5, @bottom: @white) {
+.nav-divider() {
   // IE7 needs a set width since we gave a height. Restricting just
   // to IE7 to keep the 1px left/right space in other browsers.
   // It is unclear where IE is getting the extra space that we need
@@ -442,8 +450,8 @@
   margin: ((@baseLineHeight / 2) - 1) 1px; // 8px 1px
   *margin: -5px 0 5px;
   overflow: hidden;
-  background-color: @top;
-  border-bottom: 1px solid @bottom;
+  background-color: #e5e5e5;
+  border-bottom: 1px solid @white;
 }
 
 // Button backgrounds

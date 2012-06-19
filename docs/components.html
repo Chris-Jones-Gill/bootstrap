@@ -24,7 +24,6 @@
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
-
   </head>
 
   <body data-spy="scroll" data-target=".subnav" data-offset="50">
@@ -35,11 +34,11 @@
     <div class="navbar navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container">
-          <button type="button"class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
-          </button>
+          </a>
           <a class="brand" href="./index.html">Bootstrap</a>
           <div class="nav-collapse collapse">
             <ul class="nav">
@@ -814,7 +813,7 @@
       <h3>Straightforward markup</h3>
       <p>Using tabbable tabs requires a wrapping div, a set of tabs, and a set of tabbable panes of content.</p>
 <pre class="prettyprint linenums">
-&lt;div class="tabbable"&gt; &lt;!-- Only required for left/right tabs --&gt;
+&lt;div class="tabbable"&gt; &lt;-- Only required for left/right tabs --&gt;
   &lt;ul class="nav nav-tabs"&gt;
     &lt;li class="active"&gt;&lt;a href="#tab1" data-toggle="tab"&gt;Section 1&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href="#tab2" data-toggle="tab"&gt;Section 2&lt;/a&gt;&lt;/li&gt;
@@ -1084,7 +1083,7 @@
 <pre class="prettyprint linenums">
 &lt;ul class="nav"&gt;
   &lt;li class="active"&gt;
-    &lt;a href="#">Home&lt;/a&gt;
+    &lt;a href="#"&gt;Home&lt;/a&gt;
   &lt;/li&gt;
   &lt;li&gt;&lt;a href="#"&gt;Link&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href="#"&gt;Link&lt;/a&gt;&lt;/li&gt;
@@ -1107,7 +1106,7 @@
   &lt;li class="dropdown"&gt;
     &lt;a href="#"
           class="dropdown-toggle"
-          data-toggle="dropdown">
+          data-toggle="dropdown"&gt;
           Account
           &lt;b class="caret"&gt;&lt;/b&gt;
     &lt;/a&gt;
@@ -1240,14 +1239,14 @@
 <pre class="prettyprint linenums">
 &lt;div class="pagination"&gt;
   &lt;ul&gt;
-    &lt;li&gt;&lt;a href="#"&gt;Prev&lt;/a&gt;&lt;/li>
+    &lt;li&gt;&lt;a href="#"&gt;Prev&lt;/a&gt;&lt;/li&gt;
     &lt;li class="active"&gt;
       &lt;a href="#"&gt;1&lt;/a&gt;
     &lt;/li&gt;
     &lt;li&gt;&lt;a href="#"&gt;2&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href="#"&gt;3&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href="#"&gt;4&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href="#"&gt;Next&lt;/a&gt;&lt;/li>
+    &lt;li&gt;&lt;a href="#"&gt;Next&lt;/a&gt;&lt;/li&gt;
   &lt;/ul&gt;
 &lt;/div&gt;
 </pre>
@@ -1666,7 +1665,7 @@
 
 
 
-<!-- Alerts
+<!-- Alerts & Messages
 ================================================== -->
 <section id="alerts">
   <div class="page-header">
@@ -1689,7 +1688,7 @@
       <h3>Example alerts</h3>
       <p>Wrap your message and an optional close icon in a div with simple class.</p>
       <div class="alert">
-        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <button class="close" data-dismiss="alert">&times;</button>
         <strong>Warning!</strong> Best check yo self, you're not looking too good.
       </div>
 <pre class="prettyprint linenums">
@@ -1698,10 +1697,10 @@
   &lt;strong&gt;Warning!&lt;/strong&gt; Best check yo self, you're not looking too good.
 &lt;/div&gt;
 </pre>
-      <p><span class="label label-info">Heads up!</span> iOS devices require an <code>href="#"</code> for the dismissal of alerts. Be sure to include it and the data attribute for anchor close icons. Alternatively, you may use a <code>&lt;button&gt;</code> element with the data attribute, which we have opted to do for our docs. When using <code>&lt;button&gt;</code>, you must include <code>type="button"</code> or your forms may not submit.</p>
+      <p><span class="label label-info">Heads up!</span> iOS devices require an <code>href="#"</code> for the dismissal of alerts. Be sure to include it and the data attribute for anchor close icons. Alternatively, you may use a <code>button</code> element with the data attribute, which we have opted to do for our docs.</p>
       <p>Easily extend the standard alert message with two optional classes: <code>.alert-block</code> for more padding and text controls and <code>.alert-heading</code> for a matching heading.</p>
       <div class="alert alert-block">
-        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <button class="close" data-dismiss="alert">&times;</button>
         <h4 class="alert-heading">Warning!</h4>
         <p>Best check yo self, you're not looking too good. Nulla vitae elit libero, a pharetra augue. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</p>
       </div>
@@ -1720,7 +1719,7 @@
     <div class="span4">
       <h3>Error or danger</h3>
       <div class="alert alert-error">
-        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <button class="close" data-dismiss="alert">&times;</button>
         <strong>Oh snap!</strong> Change a few things up and try submitting again.
       </div>
 <pre class="prettyprint linenums">
@@ -1732,7 +1731,7 @@
     <div class="span4">
       <h3>Success</h3>
       <div class="alert alert-success">
-        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <button class="close" data-dismiss="alert">&times;</button>
         <strong>Well done!</strong> You successfully read this important alert message.
       </div>
 <pre class="prettyprint linenums">
@@ -1744,7 +1743,7 @@
     <div class="span4">
       <h3>Information</h3>
       <div class="alert alert-info">
-        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <button class="close" data-dismiss="alert">&times;</button>
         <strong>Heads up!</strong> This alert needs your attention, but it's not super important.
       </div>
 <pre class="prettyprint linenums">
