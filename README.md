@@ -1,3 +1,19 @@
+[Bootstrap for KISS Web Design](https://github.com/KISS-Web-Design/bootstrap)
+=============================
+
+LESS Changes to output font-size, line-height and height in rem as well as px
+Add js tooltip function so a tooltip can be called without using rel=
+Update tooltip html to reflect new js function
+Include changes from twitter/bootstrap issue #3888
+Include changes from twitter/bootstrap issue #3885
+Include changes from twitter/bootstrap issue #3884
+Include changes from twitter/bootstrap issue #3880
+Include changes from twitter/bootstrap issue #3878
+Include changes from twitter/bootstrap issue #3876
+Include changes from twitter/bootstrap issue #3875
+
+Live example at [http://twitterbootstrap.stempsite.co.uk/](http://twitterbootstrap.stempsite.co.uk/)
+
 [Twitter Bootstrap](http://twitter.github.com/bootstrap) [![Build Status](https://secure.travis-ci.org/twitter/bootstrap.png)](http://travis-ci.org/twitter/bootstrap)
 =================
 

@@ -34,11 +34,11 @@
     <div class="navbar navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container">
-          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <button type="button"class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
-          </a>
+          </button>
           <a class="brand" href="./index.html">Bootstrap</a>
           <div class="nav-collapse collapse">
             <ul class="nav">
@@ -80,37 +80,59 @@
 <header class="jumbotron masthead">
   <div class="inner">
     <h1>Bootstrap, from Twitter</h1>
+    <h2>Forked and Modified by KISS Web Design</h2>
     <p>Simple and flexible HTML, CSS, and Javascript for popular user interface components and interactions.</p>
     <p class="download-info">
-      <a href="https://github.com/twitter/bootstrap/" class="btn btn-primary btn-large">View project on GitHub</a>
-      <a href="assets/bootstrap.zip" class="btn btn-large">Download Bootstrap <small>(v2.0.3)</small></a>
+      <a href="https://github.com/KISS-Web-Design/bootstrap" class="btn btn-primary btn-large">View project on GitHub</a>
+      <a href="assets/bootstrap.zip" class="btn btn-large">Download Bootstrap from KWD <small>(based on twitter bootstrap v2.0.4, with corrections)</small></a>
     </p>
   </div>
 
   <div class="bs-links">
+  	
     <ul class="quick-links">
-      <li><a href="./upgrading.html">Upgrading from 1.4</a></li>
-      <li><a href="https://github.com/twitter/bootstrap/zipball/master">Download with docs</a></li>
-      <li><a href="http://blog.getbootstrap.com">Read the blog</a></li>
-      <li><a href="https://github.com/twitter/bootstrap/issues?state=open">Submit issues</a></li>
-      <li><a href="https://github.com/twitter/bootstrap/wiki">Roadmap and changelog</a></li>
+      <li><a href="https://github.com/KISS-Web-Design/bootstrap/zipball/master">Download project</a> - <a href="#" data-tip="top" data-original-title="No node.js build stuff, just the html, css and js files. Just unzip on a suitable web-server.">NOTE</a></a></li>
+      <li><a href="http://blog.getbootstrap.com">Read the Twitter Bootstrap blog</a></li>
+      <li><a href="https://github.com/KISS-Web-Design/bootstrap/issues?state=open">Submit issues to KISS Web Design</a></li>
     </ul>
     <ul class="quick-links">
       <li>
-        <iframe class="github-btn" src="http://markdotto.github.com/github-buttons/github-btn.html?user=twitter&repo=bootstrap&type=watch&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="112px" height="20px"></iframe>
+        <iframe class="github-btn" src="http://markdotto.github.com/github-buttons/github-btn.html?user=KISS-Web-Design&repo=bootstrap&type=watch&count=false" allowtransparency="true" frameborder="0" scrolling="0" width="112px" height="20px"></iframe>
       </li>
       <li>
-        <iframe class="github-btn" src="http://markdotto.github.com/github-buttons/github-btn.html?user=twitter&repo=bootstrap&type=fork&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="98px" height="20px"></iframe>
+        <iframe class="github-btn" src="http://markdotto.github.com/github-buttons/github-btn.html?user=KISS-Web-Design&repo=bootstrap&type=fork&count=false" allowtransparency="true" frameborder="0" scrolling="0" width="98px" height="20px"></iframe>
       </li>
       <li class="follow-btn">
         <a href="https://twitter.com/twbootstrap" class="twitter-follow-button" data-link-color="#0069D6" data-show-count="true">Follow @twbootstrap</a>
       </li>
-      <li class="tweet-btn">
-        <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://twitter.github.com/bootstrap/" data-count="horizontal" data-via="twbootstrap" data-related="mdo:Creator of Twitter Bootstrap">Tweet</a>
+      <li class="follow-btn">
+        <a href="https://twitter.com/KissWebDesign" class="twitter-follow-button" data-show-count="false">Follow @KissWebDesign</a>
       </li>
     </ul>
   </div>
 </header>
+<hr class="soften">
+
+<div class="marketing">
+	  <h1>What have we changed?</h1>
+	  <p class="marketing-byline">Need to find out whats changed? Read on.</p>
+	  <div class="row">
+	  	<div class="span8 offset2">
+			<h2>KISS Web Design has forked and modified Twitter Bootstrap for our own needs</h2>
+			<p>This includes changes to (some of) the LESS files, the HTML and the js files.<br />
+			Key changes are:</p>
+			<ul>
+				<li>Add mixins to output font-size, line-height and height as rem units as well as px (better for accessibility)</li>
+				<li>Add js function for creating a tooltip without using the rel="tooltip" format (rel= is not recommended by W3C) - <a href="javascript.html#tooltips">example</a></li>
+				<li>Include changes from twitter/bootstrap issues #3888, #3885, #3884, #3880, #3878, #3876, #3875
+				<ul>
+					<li>These changes correct some spelling and syntax mistakes, as well as adding some usefull destroy functions for popovers and tooltips</li>
+				</ul>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
 
 <hr class="soften">
 

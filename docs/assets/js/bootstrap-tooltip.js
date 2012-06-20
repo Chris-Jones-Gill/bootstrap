@@ -1,22 +1,22 @@
 /* ===========================================================
-* bootstrap-tooltip.js v2.0.4
-* http://twitter.github.com/bootstrap/javascript.html#tooltips
-* Inspired by the original jQuery.tipsy by Jason Frame
-* ===========================================================
-* Copyright 2012 Twitter, Inc.
-*
-* Licensed under the Apache License, Version 2.0 (the "License");
-* you may not use this file except in compliance with the License.
-* You may obtain a copy of the License at
-*
-* http://www.apache.org/licenses/LICENSE-2.0
-*
-* Unless required by applicable law or agreed to in writing, software
-* distributed under the License is distributed on an "AS IS" BASIS,
-* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-* See the License for the specific language governing permissions and
-* limitations under the License.
-* ========================================================== */
+ * bootstrap-tooltip.js v2.0.4-KWD -- Add destroy and non rel= tooltip functions
+ * http://twitter.github.com/bootstrap/javascript.html#tooltips
+ * Inspired by the original jQuery.tipsy by Jason Frame
+ * ===========================================================
+ * Copyright 2012 Twitter, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ * ========================================================== */
 
 
 !function ($) {
@@ -25,7 +25,7 @@
 
 
  /* TOOLTIP PUBLIC CLASS DEFINITION
-* =============================== */
+  * =============================== */
 
   var Tooltip = function (element, options) {
     this.init('tooltip', element, options)
@@ -148,11 +148,20 @@
       }
     }
 
+  , isHTML: function(text) {
+      // html string detection logic adapted from jQuery
+      return typeof text != 'string'
+        || ( text.charAt(0) === "<"
+          && text.charAt( text.length - 1 ) === ">"
+          && text.length >= 3
+        ) || /^(?:[^<]*<[\w\W]+>[^>]*$)/.exec(text)
+    }
+
   , setContent: function () {
       var $tip = this.tip()
         , title = this.getTitle()
 
-      $tip.find('.tooltip-inner')[this.options.html ? 'html' : 'text'](title)
+      $tip.find('.tooltip-inner')[this.isHTML(title) ? 'html' : 'text'](title)
       $tip.removeClass('fade in top bottom left right')
     }
 
@@ -245,7 +254,7 @@
 
 
  /* TOOLTIP PLUGIN DEFINITION
-* ========================= */
+  * ========================= */
 
   $.fn.tooltip = function ( option ) {
     return this.each(function () {
@@ -267,7 +276,6 @@
   , trigger: 'hover'
   , title: ''
   , delay: 0
-  , html: true
   }
 
   $('[data-tip]').each( function() {
