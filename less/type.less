@@ -1,9 +1,10 @@
-// Typography.less
-// Headings, body text, lists, code, and more for a versatile and durable typography system
-// ----------------------------------------------------------------------------------------
+//
+// Typography
+// --------------------------------------------------
 
-// BODY TEXT
-// ---------
+
+// Body text
+// -------------------------
 
 p {
   margin: 0 0 @baseLineHeight / 2;
@@ -22,73 +23,94 @@ p {
   #font > .kwd-line-height(@baseLineHeight * 1.5);
 }
 
-// HEADINGS
-// --------
+// Emphasis & misc
+// -------------------------
+
+small {
+  font-size: 85%; // Ex: 14px base font * 85% = about 12px
+}
+strong {
+  font-weight: bold;
+}
+em {
+  font-style: italic;
+}
+cite {
+  font-style: normal;
+}
+.muted {
+  color: @grayLight;
+}
+
+
+// Headings
+// -------------------------
 
 h1, h2, h3, h4, h5, h6 {
-  margin: 0;
+  margin: (@baseLineHeight / 2) 0;
   font-family: @headingsFontFamily;
   font-weight: @headingsFontWeight;
+  line-height: 1;
   color: @headingsColor;
   text-rendering: optimizelegibility; // Fix the character spacing for headings
   small {
     font-weight: normal;
+    line-height: 1;
     color: @grayLight;
   }
 }
 h1 {
-  #font > .kwd-font-size(30);
-  #font > .kwd-line-height(@baseLineHeight * 2);
+  #font > .kwd-font-size(36);
+  #font > .kwd-line-height(40);
   small {
-    #font > .kwd-font-size(18);
+    #font > .kwd-font-size(24);
   }
 }
 h2 {
-  #font > .kwd-font-size(24);
-  #font > .kwd-line-height(@baseLineHeight * 2);
+  #font > .kwd-font-size(30);
+  #font > .kwd-line-height(40);
   small {
     #font > .kwd-font-size(18);
   }
 }
 h3 {
-  #font > .kwd-font-size(18px);
-  #font > .kwd-line-height(@baseLineHeight * 1.5);
+  #font > .kwd-font-size(24);
+  #font > .kwd-line-height(40);
   small {
-    #font > .kwd-font-size(14px);
+    #font > .kwd-font-size(14);
   }
 }
 h4, h5, h6 {
-  #font > .kwd-line-height(@baseLineHeight);
+  #font > .kwd-line-height(20);
 }
 h4 {
-  #font > .kwd-font-size(14);
+  #font > .kwd-font-size(18);
   small {
-    #font > .kwd-font-size(12);
+    #font > .kwd-font-size(14);
   }
 }
 h5 {
-  #font > .kwd-font-size(12);
+  #font > .kwd-font-size(14);
 }
 h6 {
-  #font > .kwd-font-size(11);
+  #font > .kwd-font-size(12);
   color: @grayLight;
   text-transform: uppercase;
 }
 
 // Page header
+// -------------------------
+
 .page-header {
-  padding-bottom: @baseLineHeight - 1;
-  margin: @baseLineHeight 0;
+  padding-bottom: (@baseLineHeight / 2) - 1;
+  margin: @baseLineHeight 0 (@baseLineHeight * 1.5);
   border-bottom: 1px solid @grayLighter;
 }
-.page-header h1 {
-  line-height: 1;
-}
 
 
 
-// LISTS
-// -----
+// Lists
+// --------------------------------------------------
 
 // Unordered and Ordered lists
 ul, ol {
@@ -100,12 +122,6 @@ ul ol,
 ol ol,
 ol ul {
   margin-bottom: 0;
-}
-ul {
-  list-style: disc;
-}
-ol {
-  list-style: decimal;
 }
 li {
   #font > .kwd-line-height(@baseLineHeight);
@@ -156,21 +172,10 @@ hr {
   border-bottom: 1px solid @white;
 }
 
-// Emphasis
-strong {
-  font-weight: bold;
-}
-em {
-  font-style: italic;
-}
-.muted {
-  color: @grayLight;
-}
-
 // Abbreviations and acronyms
 abbr[title] {
   cursor: help;
-  border-bottom: 1px dotted #ddd;
+  border-bottom: 1px dotted @grayLight;
 }
 abbr.initialism {
   font-size: 90%;
@@ -206,6 +211,14 @@ blockquote {
     small {
       text-align: right;
     }
+    small {
+      &:before {
+        content: '';
+      }
+      &:after {
+        content: '\00A0 \2014';
+      }
+    }
   }
 }
 
@@ -222,13 +235,5 @@ address {
   display: block;
   margin-bottom: @baseLineHeight;
   font-style: normal;
-  #font > .kwd-line-height(@baseLineHeight);
-}
-
-// Misc
-small {
-  font-size: 100%;
-}
-cite {
-  font-style: normal;
+  line-height: @baseLineHeight;
 }
