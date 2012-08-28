@@ -761,8 +761,20 @@ $('a[data-toggle="tab"]').on('shown', function (e) {
           <p>Inspired by the excellent jQuery.tipsy plugin written by Jason Frame; Tooltips are an updated version, which don't rely on images, use CSS3 for animations, and data-attributes for local title storage.</p>
           <p>Hover over the links below to see tooltips:</p>
           <div class="bs-docs-example tooltip-demo">
-            <p class="muted" style="margin-bottom: 0;">Tight pants next level keffiyeh <a href="#" rel="tooltip" title="Default tooltip">you probably</a> haven't heard of them. Photo booth beard raw denim letterpress vegan messenger bag stumptown. Farm-to-table seitan, mcsweeney's fixie sustainable quinoa 8-bit american apparel <a href="#" rel="tooltip" title="Another tooltip">have a</a> terry richardson vinyl chambray. Beard stumptown, cardigans banh mi lomo thundercats. Tofu biodiesel williamsburg marfa, four loko mcsweeney's cleanse vegan chambray. A really ironic artisan <a href="#" rel="tooltip" title="Another one here too">whatever keytar</a>, scenester farm-to-table banksy Austin <a href="#" rel="tooltip" title="The last tip!">twitter handle</a> freegan cred raw denim single-origin coffee viral.
-            </p>
+          	<h3>Bootstrap 2.1.0 tooltips - using rel="tooltip" - not recommended by W3C</h3>
+            	<p class="muted" style="margin-bottom: 0;">Tight pants next level keffiyeh <a href="#" rel="tooltip" title="Default tooltip">you probably</a> haven't heard of them. Photo booth beard raw denim letterpress vegan messenger bag stumptown. Farm-to-table seitan, mcsweeney's fixie sustainable quinoa 8-bit american apparel <a href="#" rel="tooltip" title="Another tooltip">have a</a> terry richardson vinyl chambray. Beard stumptown, cardigans banh mi lomo thundercats. Tofu biodiesel williamsburg marfa, four loko mcsweeney's cleanse vegan chambray. A really ironic artisan <a href="#" rel="tooltip" title="Another one here too">whatever keytar</a>, scenester farm-to-table banksy Austin <a href="#" rel="tooltip" title="The last tip!">twitter handle</a> freegan cred raw denim single-origin coffee viral.
+            	</p>
+				<br />
+            <h3>Alternative method - Tooltips without using rel="tooltip"</h3>
+            	<p class="muted" style="margin-bottom: 0;">Requires an additional js function to be added to bootstrap-tooltip.js<br />
+            		<pre class="prettyprint linenums">$('[data-tip]').each( function() {$(this).tooltip({ placement: $(this).data('tip') }); });</pre>
+            	</p>
+            	<p class="muted" style="margin-bottom: 0;">
+            	To use this tooltip method use href="#" data-tip="[position]" and data-original-title="tooltip text", where [position] can be left, right, top or bottom. Example:
+            		<pre class="prettyprint linenums">&lt;a href="#" data-tip="left" data-original-title="first tooltip"&gt;you probably&lt;/a&gt;</pre>
+            	</p>
+				<p class="muted" style="margin-bottom: 0;">Tight pants next level keffiyeh <a href="#" data-tip="left" data-original-title="first tooltip">you probably</a> haven't heard of them. Photo booth beard raw denim letterpress vegan messenger bag stumptown. Farm-to-table seitan, mcsweeney's fixie sustainable quinoa 8-bit american apparel <a href="#" data-tip="right" title="Another tooltip">have a</a> terry richardson vinyl chambray. Beard stumptown, cardigans banh mi lomo thundercats. Tofu biodiesel williamsburg marfa, four loko mcsweeney's cleanse vegan chambray. A really ironic artisan <a href="#" data-tip="bottom" title="Another one here too">whatever keytar</a>, scenester farm-to-table banksy Austin <a href="#" data-tip="top" title="The last tip!">twitter handle</a> freegan cred raw denim single-origin coffee viral.
+            	</p>
           </div>
 
           <h3>Four directions</h3>
@@ -850,8 +862,13 @@ $('a[data-toggle="tab"]').on('shown', function (e) {
 
           <h3>Markup</h3>
           <p>For performance reasons, the Tooltip and Popover data-apis are opt in. If you would like to use them just specify a selector option.</p>
-          <pre class="prettyprint linenums">&lt;a href="#" rel="tooltip" title="first tooltip"&gt;hover over me&lt;/a&gt;</pre>
-
+          <p>Both markup styles work, but the rel="tooltip" markup fails the W3C HTML Validator <a href="http://validator.w3.org/" target="_blank">http://validator.w3.org/</a> 
+          	and the NU HTML5 validator <a href="http://validator.w3.org/nu/" target="_blank">http://validator.w3.org/nu/</a>.<br />
+          	The default markup style gives the following error:<br />
+          	<strong><em>"Error: Bad value tooltip for attribute rel on element a: Keyword tooltip is not registered."</em></strong></p>
+          <pre class="prettyprint linenums">&lt;a href="#" rel="tooltip" title="first tooltip"&gt;I work, but fail the W3C HTML validator&lt;/a&gt;</pre>
+		  <pre class="prettyprint linenums">&lt;a href="#" data-tip="left" data-original-title="first tooltip"&gt;I also work, and pass the W3C validator&lt;/a&gt;</pre>
+		  <p>For more information on the valid HTML rel keywords (link types) read <a href="http://www.w3.org/TR/html4/struct/links.html" target="_blank">this</a> and <a href="http://www.w3.org/TR/html4/types.html#h-6.12" target="_blank">this</a>. </p>
           <h3>Methods</h3>
           <h4>$().tooltip(options)</h4>
           <p>Attaches a tooltip handler to an element collection.</p>

@@ -272,4 +272,10 @@
   , html: true
   }
 
+  $('[data-tip]').each( function() {
+    $(this).tooltip({
+        placement: $(this).data('tip')
+    });
+  });
+
 }(window.jQuery);
