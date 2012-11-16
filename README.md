@@ -1,7 +1,7 @@
-[Bootstrap for KISS Web Design](https://github.com/KISS-Web-Design/bootstrap)
+[Bootstrap for KISS Web Design 2.2.1-KWD](https://github.com/KISS-Web-Design/bootstrap)
 =============================
   
-This project is based on, and incorporates all code/markup from twiter/bootstrap 2.1.0
+This project is based on twiter/bootstrap 2.2.1-wip via [sass-twitter-bootstrap](https://github.com/jlong/sass-twitter-bootstrap)
   
 How this differs from Twitter Bootstrap  
 =======================================  
@@ -10,9 +10,14 @@ This file
 ---------  
 The readme.MD file you are reading is different from the original projects readme.md, as it contains a summary of the changes made to the project that differentiate it from the orginal.  
 
+Uses SASS instead of LESS
+-------------------------
+
+Replaced the LESS builder with SASS, which is more complex but offers greater flexibility and features. The structure is configured for [Compass](http://compass-style.org/) and [Compass App](http://compass.handlino.com/).  
+
 Uses rem units as well as px
 ----------------------------
-LESS Changes to output font-size, line-height and height in rem as well as px (px is only used if the browser does not support rem units)  
+SASS Changes to output all units (except for the sprites for the icons) as rem units, with px as a fallback. rem units have an 80% global support from browsers [data from caniuse.com](http://caniuse.com/#search=rem)
 
 References regarding the use and understanding of rem units.  
 W3C, Understanding WCAG 2.0, Resize Text states "Ensuring that text containers resize when the text resizes AND using measurements that are relative to other measurements in the content..."  
@@ -53,7 +58,9 @@ All the LESS files have been retained, only the changes listed above have been m
 Items added  
 -----------  
  - /docs/bootstrap.zip (file): contains all the files needed to run bootstrap on a webserver.
-  
+ - /sass (folder): contains all the sass files ready to compile
+ - /stylesheets (folder): contains the compiled css files
+ - config,rb (file): compass app configuration  
   
 Live website  
 ------------  

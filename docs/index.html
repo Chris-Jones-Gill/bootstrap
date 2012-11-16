@@ -74,12 +74,12 @@
     <h1>Twitter Bootstrap</h1>
     <h2>Forked and Modified by KISS Web Design</h2>
     <p>Sleek, intuitive, and powerful front-end framework for faster and easier web development.</p>
-    <p><a href="assets/bootstrap.zip"  class="btn btn-primary btn-large">Download Bootstrap from KWD <small>(based on twitter bootstrap v2.1.0, with modifications)</small></a></p>
+    <p><a href="assets/bootstrap.zip"  class="btn btn-primary btn-large">Download Bootstrap <small>Version 2.2.1-KWD</small></a></p>
       
     <ul class="masthead-links">
       <li><a href="https://github.com/KISS-Web-Design/bootstrap">GitHub project</a></li>
       <li><a href="./extend.html" >Extend</a></li>
-      <li>Version 2.1.0-kwd</li>
+      <li>Version 2.2.1-kwd</li>
     </ul>
   </div>
 </header>
@@ -111,11 +111,23 @@
 	  <div class="row">
 	  	<div class="span8 offset2">
 			<h2>KISS Web Design has forked and modified Twitter Bootstrap for our own needs</h2>
-			<p>This includes changes to (some of) the LESS files, the HTML and the js files.<br />
+			<p>This includes changing to SASS from LESS, some HTML and some js files.<br />
 			Key changes are:</p>
 			<ul>
-				<li>Add mixins to output font-size, line-height and height as rem units as well as px (better for accessibility)</li>
-				<li>Add js function for creating a tooltip without using the rel="tooltip" format (rel= is not recommended by W3C) - <a href="javascript.html#tooltips">example</a></li>
+				<li style="list-style-type: none">Uses SASS configured for <a href="http://compass-style.org/">Compass</a> and <a href="http://compass.handlino.com/">Compass App</a></li>
+				<li style="list-style-type: none">Add mixins to output rem units with px fallback (better for accessibility)</li>
+				<li style="list-style-type: none">Add js function for creating a tooltip without using the rel="tooltip" format (rel= is not recommended by W3C) - <a href="javascript.html#tooltips">example</a></li>
+			</ul>
+			<p>Replaced the LESS with SASS, which is more complex but offers greater flexibility and features</p>
+			<p>Based on the <a href="https://github.com/jlong/sass-twitter-bootstrap">sass-twitter-bootstrap project</a></p>
+			<p>SASS Changes to output all units (except for the sprites for the icons) as rem units, with px as a fallback. rem units have an 80% global support from browsers <a href="http://caniuse.com/#search=rem">data from caniuse.com</a></p>			
+			<p>References regarding the use and understanding of rem units. </p> 
+			<ul>
+				<li style="list-style-type: none">W3C, Understanding WCAG 2.0, Resize Text states "Ensuring that text containers resize when the text resizes AND using measurements that are relative to other measurements in the content..."  </li>
+				<li style="list-style-type: none">Detailed explanation: <a href="http://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-scale.html">http://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-scale.html</a></li>
+				<li style="list-style-type: none">W3C quick overview: <a href="http://www.w3.org/WAI/WCAG20/quickref/Overview.php#visual-audio-contrast">http://www.w3.org/WAI/WCAG20/quickref/Overview.php#visual-audio-contrast</a></li>
+				<li style="list-style-type: none">Using rem units: <a href="http://snook.ca/archives/html_and_css/font-size-with-rem">http://snook.ca/archives/html_and_css/font-size-with-rem</a></li>
+				<li style="list-style-type: none">Web Accessibility for Designers infographic: <a href="http://webaim.org/resources/designers/">http://webaim.org/resources/designers/</a></li>
 			</ul>
 		</div>
 	</div>

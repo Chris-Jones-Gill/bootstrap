@@ -13,11 +13,13 @@
 body {
   position: relative;
   padding-top: 40px;
+  padding-top: 2.5rem;
 }
 
 /* Code in headings */
 h3 code {
   font-size: 14px;
+  font-size: 0.875rem;
   font-weight: normal;
 }
 
@@ -28,6 +30,7 @@ h3 code {
 
 body > .navbar {
   font-size: 13px;
+  font-size: 0.8125rem;
 }
 
 /* Change the docs' brand */
@@ -35,10 +38,12 @@ body > .navbar .brand {
   padding-right: 0;
   padding-left: 0;
   margin-left: 20px;
+  margin-left: 1.25rem;
   float: right;
   font-weight: bold;
   color: #000;
   text-shadow: 0 1px 0 rgba(255,255,255,.1), 0 0 30px rgba(255,255,255,.125);
+  text-shadow: 0 0.0625rem 0 rgba(255,255,255,.1), 0 0 1.875rem rgba(255,255,255,.125);
   -webkit-transition: all .2s linear;
      -moz-transition: all .2s linear;
           transition: all .2s linear;
@@ -46,6 +51,7 @@ body > .navbar .brand {
 body > .navbar .brand:hover {
   text-decoration: none;
   text-shadow: 0 1px 0 rgba(255,255,255,.1), 0 0 30px rgba(255,255,255,.4);
+  text-shadow: 0 0.0625rem 0 rgba(255,255,255,.1), 0 0 1.875rem rgba(255,255,255,.4);
 }
 
 
@@ -55,6 +61,7 @@ body > .navbar .brand:hover {
 /* padding for in-page bookmarks and fixed navbar */
 section {
   padding-top: 30px;
+  padding-top: 1.875rem;
 }
 section > .page-header,
 section > .lead {
@@ -62,17 +69,21 @@ section > .lead {
 }
 section > ul li {
   margin-bottom: 5px;
+  margin-bottom: 0.3125rem;
 }
 
 /* Separators (hr) */
 .bs-docs-separator {
   margin: 40px 0 39px;
+  margin: 2.5rem 0 2.4375rem;
 }
 
 /* Faded out hr */
 hr.soften {
   height: 1px;
+  height: 0.0625rem;
   margin: 70px 0;
+  margin: 4.375rem 0;
   background-image: -webkit-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,.1), rgba(0,0,0,0));
   background-image:    -moz-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,.1), rgba(0,0,0,0));
   background-image:     -ms-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,.1), rgba(0,0,0,0));
@@ -90,9 +101,11 @@ hr.soften {
 .jumbotron {
   position: relative;
   padding: 40px 0;
+  padding: 2.5rem 0;
   color: #fff;
   text-align: center;
   text-shadow: 0 1px 3px rgba(0,0,0,.4), 0 0 30px rgba(0,0,0,.075);
+  text-shadow: 0 0.0625rem 0.1875rem rgba(0,0,0,.4), 0 0 1.875rem rgba(0,0,0,.075);
   background: #020031; /* Old browsers */
   background: -moz-linear-gradient(45deg,  #020031 0%, #6d3353 100%); /* FF3.6+ */
   background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,#020031), color-stop(100%,#6d3353)); /* Chrome,Safari4+ */
@@ -104,18 +117,25 @@ hr.soften {
   -webkit-box-shadow: inset 0 3px 7px rgba(0,0,0,.2), inset 0 -3px 7px rgba(0,0,0,.2);
      -moz-box-shadow: inset 0 3px 7px rgba(0,0,0,.2), inset 0 -3px 7px rgba(0,0,0,.2);
           box-shadow: inset 0 3px 7px rgba(0,0,0,.2), inset 0 -3px 7px rgba(0,0,0,.2);
+  -webkit-box-shadow: inset 0 0.1875rem 0.4375 rgba(0,0,0,.2), inset 0 -0.1875rem 0.4375rem rgba(0,0,0,.2);
+     -moz-box-shadow: inset 0 0.1875rem 0.4375 rgba(0,0,0,.2), inset 0 -0.1875rem 0.4375rem rgba(0,0,0,.2);
+          box-shadow: inset 0 0.1875rem 0.4375 rgba(0,0,0,.2), inset 0 -0.1875rem 0.4375rem rgba(0,0,0,.2);
 }
 .jumbotron h1 {
   font-size: 80px;
+  font-size: 5rem;
   font-weight: bold;
   letter-spacing: -1px;
+  letter-spacing: -0.0625rem;
   line-height: 1;
 }
 .jumbotron p {
   font-size: 24px;
+  font-size: 1.5rem;
   font-weight: 300;
-  line-height: 30px;
+  line-height: 1.25;
   margin-bottom: 30px;
+  margin-bottom: 1.875rem;
 }
 
 /* Link styles (used on .masthead-links as well) */
@@ -129,46 +149,49 @@ hr.soften {
 .jumbotron a:hover {
   color: #fff;
   text-shadow: 0 0 10px rgba(255,255,255,.25);
+  text-shadow: 0 0 0.625rem rgba(255,255,255,.25);
 }
 
 /* Download button */
-@-webkit-keyframes downloadButton {
-  from { box-shadow: inset 0 1px 0 rgba(255,255,255,.1), 0 1px 5px rgba(0,0,0,.25), 0 2px 10px rgba(0,68,204,.5); }
-  50% {  box-shadow: inset 0 1px 0 rgba(255,255,255,.1), 0 1px 5px rgba(0,0,0,.25), 0 2px 25px rgba(0,68,204,.9); }
-  to {   box-shadow: inset 0 1px 0 rgba(255,255,255,.1), 0 1px 5px rgba(0,0,0,.25), 0 2px 10px rgba(0,68,204,.5); }
-}
-@-moz-keyframes downloadButton {
-  from { box-shadow: inset 0 1px 0 rgba(255,255,255,.1), 0 1px 5px rgba(0,0,0,.25), 0 2px 10px rgba(0,68,204,.5); }
-  50% {  box-shadow: inset 0 1px 0 rgba(255,255,255,.1), 0 1px 5px rgba(0,0,0,.25), 0 2px 25px rgba(0,68,204,.9); }
-  to {   box-shadow: inset 0 1px 0 rgba(255,255,255,.1), 0 1px 5px rgba(0,0,0,.25), 0 2px 10px rgba(0,68,204,.5); }
-}
 .masthead .btn {
-  padding: 14px 24px;
+  padding: 19px 24px;
+  padding: 1.1875rem 1.5rem;
   font-size: 24px;
+  font-size: 1.5rem;
   font-weight: 200;
   color: #fff; /* redeclare to override the `.jumbotron a` */
   border: 0;
   -webkit-border-radius: 6px;
      -moz-border-radius: 6px;
           border-radius: 6px;
-  -webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,.1), 0 1px 5px rgba(0,0,0,.25), 0 2px 10px rgba(0,68,204,.01);
-     -moz-box-shadow: inset 0 1px 0 rgba(255,255,255,.1), 0 1px 5px rgba(0,0,0,.25), 0 2px 10px rgba(0,68,204,.01);
-          box-shadow: inset 0 1px 0 rgba(255,255,255,.1), 0 1px 5px rgba(0,0,0,.25), 0 2px 10px rgba(0,68,204,.01);
-  -webkit-animation-name: downloadButton;
-     -moz-animation-name: downloadButton;
-  -webkit-animation-duration: 1.5s;
-     -moz-animation-duration: 1.5s;
-  -webkit-animation-iteration-count: infinite;
-     -moz-animation-iteration-count: infinite;
+  -webkit-border-radius: 0.375rem
+     -moz-border-radius: 0.375rem;
+          border-radius: 0.375rem;
+  -webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,.1), 0 1px 5px rgba(0,0,0,.25);
+     -moz-box-shadow: inset 0 1px 0 rgba(255,255,255,.1), 0 1px 5px rgba(0,0,0,.25);
+          box-shadow: inset 0 1px 0 rgba(255,255,255,.1), 0 1px 5px rgba(0,0,0,.25);
+  -webkit-box-shadow: inset 0 0.0625rem 0 rgba(255,255,255,.1), 0 0.0625rem 0.3125rem rgba(0,0,0,.25);
+     -moz-box-shadow: inset 0 0.0625rem 0 rgba(255,255,255,.1), 0 0.0625rem 0.3125rem rgba(0,0,0,.25);
+          box-shadow: inset 0 0.0625rem 0 rgba(255,255,255,.1), 0 0.0625rem 0.3125rem rgba(0,0,0,.25);
   -webkit-transition: none;
      -moz-transition: none;
           transition: none;
-
+}
+.masthead .btn:hover {
+  -webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,.1), 0 1px 5px rgba(0,0,0,.25);
+     -moz-box-shadow: inset 0 1px 0 rgba(255,255,255,.1), 0 1px 5px rgba(0,0,0,.25);
+          box-shadow: inset 0 1px 0 rgba(255,255,255,.1), 0 1px 5px rgba(0,0,0,.25);
+  -webkit-box-shadow: inset 0 0.0625rem 0 rgba(255,255,255,.1), 0 0.0625rem 0.3125rem rgba(0,0,0,.25);
+     -moz-box-shadow: inset 0 0.0625rem 0 rgba(255,255,255,.1), 0 0.0625rem 0.3125rem rgba(0,0,0,.25);
+          box-shadow: inset 0 0.0625rem 0 rgba(255,255,255,.1), 0 0.0625rem 0.3125rem rgba(0,0,0,.25);
 }
 .masthead .btn:active {
   -webkit-box-shadow: inset 0 2px 4px rgba(0,0,0,.1), 0 1px 0 rgba(255,255,255,.1);
      -moz-box-shadow: inset 0 2px 4px rgba(0,0,0,.1), 0 1px 0 rgba(255,255,255,.1);
           box-shadow: inset 0 2px 4px rgba(0,0,0,.1), 0 1px 0 rgba(255,255,255,.1);
+  -webkit-box-shadow: inset 0 0.125rem 0.25rem rgba(0,0,0,.1), 0 0.0625rem 0 rgba(255,255,255,.1);
+     -moz-box-shadow: inset 0 0.125rem 0.25rem rgba(0,0,0,.1), 0 0.0625rem 0 rgba(255,255,255,.1);
+          box-shadow: inset 0 0.125rem 0.25rem rgba(0,0,0,.1), 0 0.0625rem 0 rgba(255,255,255,.1);
 }
 
 
@@ -194,16 +217,19 @@ hr.soften {
 ------------------------- */
 .masthead {
   padding: 70px 0 80px;
+  padding: 4.375rem 0 5rem;
   margin-bottom: 0;
   color: #fff;
 }
 .masthead h1 {
   font-size: 120px;
+  font-size: 7.5remx;
   line-height: 1;
-  letter-spacing: -2px;
+  letter-spacing: -0.125rem;
 }
 .masthead p {
   font-size: 40px;
+  font-size: 2.5rem;
   font-weight: 200;
   line-height: 1.25;
 }
@@ -216,16 +242,20 @@ hr.soften {
 .masthead-links li {
   display: inline;
   padding: 0 10px;
+  padding: 0 0.625rem;
   color: rgba(255,255,255,.25);
 }
 
 /* Social proof buttons from GitHub & Twitter */
 .bs-docs-social {
   padding: 15px 0;
+  padding: 0.9375rem 0;
   text-align: center;
   background-color: #f5f5f5;
   border-top: 1px solid #fff;
+  border-top: 0.0625rem solid #fff;
   border-bottom: 1px solid #ddd;
+  border-bottom: 0.0625rem solid #ddd;
 }
 
 /* Quick links on Home */
@@ -238,6 +268,7 @@ hr.soften {
 .bs-docs-social-buttons li {
   display: inline-block;
   padding: 5px 8px;
+  padding: 0.3125rem 0.5rem;
   line-height: 1;
   *display: inline;
   *zoom: 1;
@@ -248,12 +279,15 @@ hr.soften {
 .subhead {
   text-align: left;
   border-bottom: 1px solid #ddd;
+  border-bottom: 0.0625rem solid #ddd;
 }
 .subhead h1 {
   font-size: 60px;
+  font-size: 3.75rem;
 }
 .subhead p {
   margin-bottom: 20px;
+  margin-bottom: 1.25rem;
 }
 .subhead .navbar {
   display: none;
@@ -270,29 +304,37 @@ hr.soften {
 }
 .marketing h1 {
   margin: 60px 0 10px;
+  margin: 3.75rem 0 0.625rem;
   font-size: 60px;
+  font-size: 3.75rem;
   font-weight: 200;
   line-height: 1;
   letter-spacing: -1px;
+  letter-spacing: -0.0625rem;
 }
 .marketing h2 {
   font-weight: 200;
   margin-bottom: 5px;
+  margin-bottom: 0.3125rem;
 }
 .marketing p {
   font-size: 16px;
+  font-size: 1rem;
   line-height: 1.5;
 }
 .marketing .marketing-byline {
   margin-bottom: 40px;
+  margin-bottom: 2.5rem;
   font-size: 20px;
+  font-size: 1.25rem;
   font-weight: 300;
-  line-height: 25px;
+  line-height: 1.25;
   color: #999;
 }
 .marketing img {
   display: block;
   margin: 0 auto 30px;
+  margin: 0 auto 1.875rem30px;
 }
 
 
@@ -302,8 +344,11 @@ hr.soften {
 
 .footer {
   padding: 70px 0;
+  padding: 4.375rem 0;
   margin-top: 70px;
+  margin-top: 4.375rem;
   border-top: 1px solid #e5e5e5;
+  border-top: 0.0625rem solid #e5e5e5;
   background-color: #f5f5f5;
 }
 .footer p {
@@ -312,10 +357,15 @@ hr.soften {
 }
 .footer-links {
   margin: 10px 0;
+  margin: 0.625rem 0;
 }
 .footer-links li {
   display: inline;
-  margin-right: 10px;
+  padding: 0 2px;
+  padding: 0 0.125rem;
+}
+.footer-links li:first-child {
+  padding-left: 0;
 }
 
 
@@ -325,7 +375,9 @@ hr.soften {
 
 .show-grid {
   margin-top: 10px;
+  margin-top: 0.625rem;
   margin-bottom: 20px;
+  margin-bottom: 1.25rem;
 }
 .show-grid [class*="span"] {
   background-color: #eee;
@@ -333,8 +385,13 @@ hr.soften {
   -webkit-border-radius: 3px;
      -moz-border-radius: 3px;
           border-radius: 3px;
+  -webkit-border-radius: 0.1875rem;
+     -moz-border-radius: 0.1875rem;
+          border-radius: 0.1875rem;
   min-height: 40px;
+  min-height: 2.5remx;
   line-height: 40px;
+  line-height: 2.5rem;
 }
 .show-grid:hover [class*="span"] {
   background: #ddd;
@@ -353,26 +410,39 @@ hr.soften {
 -------------------------------------------------- */
 .mini-layout {
   border: 1px solid #ddd;
+  border: 0.0625rem solid #ddd;
   -webkit-border-radius: 6px;
      -moz-border-radius: 6px;
           border-radius: 6px;
+  -webkit-border-radius: 0.375rem;
+     -moz-border-radius: 0.375rem;
+          border-radius: 0.375rem;
   -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.075);
      -moz-box-shadow: 0 1px 2px rgba(0,0,0,.075);
           box-shadow: 0 1px 2px rgba(0,0,0,.075);
+  -webkit-box-shadow: 0 0.0625rem 0.125rem rgba(0,0,0,.075);
+     -moz-box-shadow: 0 0.0625rem 0.125rem rgba(0,0,0,.075);
+          box-shadow: 0 0.0625rem 0.125rem rgba(0,0,0,.075);
 }
 .mini-layout,
 .mini-layout .mini-layout-body,
 .mini-layout.fluid .mini-layout-sidebar {
   height: 300px;
+  height: 18.75rem;
 }
 .mini-layout {
   margin-bottom: 20px;
+  margin-bottom: 1.25rem;
   padding: 9px;
+  padding: 0.5625rem;
 }
 .mini-layout div {
   -webkit-border-radius: 3px;
      -moz-border-radius: 3px;
           border-radius: 3px;
+  -webkit-border-radius: 0.1875rem;
+     -moz-border-radius: 0.1875rem;
+          border-radius: 0.1875rem;
 }
 .mini-layout .mini-layout-body {
   background-color: #dceaf4;
@@ -400,25 +470,31 @@ hr.soften {
 
 .download .page-header {
   margin-top: 36px;
+  margin-top: 2.25rem;
 }
 .page-header .toggle-all {
   margin-top: 5px;
+  margin-top: 0.3125rem;
 }
 
 /* Space out h3s when following a section */
 .download h3 {
   margin-bottom: 5px;
+  margin-bottom: 0.3125rem;
 }
 .download-builder input + h3,
 .download-builder .checkbox + h3 {
   margin-top: 9px;
+  margin-top: 0.5625rem
 }
 
 /* Fields for variables */
 .download-builder input[type=text] {
   margin-bottom: 9px;
+  margin-bottom: 0.5625rem;
   font-family: Menlo, Monaco, "Courier New", monospace;
   font-size: 12px;
+  font-size: 0.75rem;
   color: #d14;
 }
 .download-builder input[type=text]:focus {
@@ -428,13 +504,19 @@ hr.soften {
 /* Custom, larger checkbox labels */
 .download .checkbox {
   padding: 6px 10px 6px 25px;
+  padding: 0.375rem 0.625rem 0.375rem 1.5625rem;
   font-size: 13px;
+  font-size: 0.8725rem;
   line-height: 18px;
+  line-height: 1.125rem;
   color: #555;
   background-color: #f9f9f9;
   -webkit-border-radius: 3px;
      -moz-border-radius: 3px;
           border-radius: 3px;
+  -webkit-border-radius: 0.1875rem;
+     -moz-border-radius: 0.1875rem;
+          border-radius: 0.1875rem;
   cursor: pointer;
 }
 .download .checkbox:hover {
@@ -443,6 +525,7 @@ hr.soften {
 }
 .download .checkbox small {
   font-size: 12px;
+  font-size: 0.75rem;
   color: #777;
 }
 
@@ -454,6 +537,7 @@ hr.soften {
 /* Giant download button */
 .download-btn {
   margin: 36px 0 108px;
+  margin: 2.25rem 0 6.75rem;
 }
 #download p,
 #download h4 {
@@ -467,18 +551,25 @@ hr.soften {
 }
 #download p {
   margin-bottom: 18px;
+  margin-bottom: 1.125rem;
 }
 .download-btn .btn {
   display: block;
   width: auto;
   padding: 19px 24px;
+  padding: 1.1875rem 1.5rem;
   margin-bottom: 27px;
+  margin-bottom: 1.6875rem;
   font-size: 30px;
+  font-size: 1.875rem;
   line-height: 1;
   text-align: center;
   -webkit-border-radius: 6px;
      -moz-border-radius: 6px;
           border-radius: 6px;
+  -webkit-border-radius: 0.375rem
+     -moz-border-radius: 0.375rem;
+          border-radius: 0.375rem;
 }
 
 
@@ -492,11 +583,13 @@ h3 + table,
 h4 + table,
 h2 + .row {
   margin-top: 5px;
+  margin-top: 0.3125rem;
 }
 
 /* Example sites showcase */
 .example-sites {
-  xmargin-left: 20px;
+  margin-left: 20px;
+  margin-left: 1.25rem;
 }
 .example-sites img {
   max-width: 100%;
@@ -505,6 +598,7 @@ h2 + .row {
 
 .scrollspy-example {
   height: 200px;
+  height: 12.5rem
   overflow: auto;
   position: relative;
 }
@@ -516,6 +610,9 @@ h2 + .row {
   -webkit-box-shadow: inset 0 1px 3px rgba(0,0,0,.1), 0 0 8px rgba(82,168,236,.6);
      -moz-box-shadow: inset 0 1px 3px rgba(0,0,0,.1), 0 0 8px rgba(82,168,236,.6);
           box-shadow: inset 0 1px 3px rgba(0,0,0,.1), 0 0 8px rgba(82,168,236,.6);
+  -webkit-box-shadow: inset 0 0.0625rem 0.1875rem rgba(0,0,0,.1), 0 0 0.5rem rgba(82,168,236,.6);
+     -moz-box-shadow: inset 0 0.0625rem 0.1875rem rgba(0,0,0,.1), 0 0 0.5rem rgba(82,168,236,.6);
+          box-shadow: inset 0 0.0625rem 0.1875rem rgba(0,0,0,.1), 0 0 0.5rem rgba(82,168,236,.6);
   outline: 0;
 }
 
@@ -524,6 +621,7 @@ h2 + .row {
 .docs-input-sizes input[type=text] {
   display: block;
   margin-bottom: 9px;
+  margin-bottom: 0.5625rem;
 }
 
 /* Icons
@@ -536,19 +634,22 @@ h2 + .row {
   float: left;
   width: 25%;
   line-height: 25px;
+  line-height: 1.5625rem;
 }
 .the-icons i:hover {
   background-color: rgba(255,0,0,.25);
 }
 
-/* Eaxmples page
+/* Example page
 ------------------------- */
 .bootstrap-examples p {
   font-size: 13px;
-  line-height: 18px;
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
 }
 .bootstrap-examples .thumbnail {
   margin-bottom: 9px;
+  margin-bottom: 0.5625rem;
   background-color: #fff;
 }
 
@@ -561,13 +662,18 @@ h2 + .row {
 .bs-docs-example {
   position: relative;
   margin: 15px 0;
+  margin: 0.9375remx 0;
   padding: 39px 19px 14px;
-  *padding-top: 19px;
+  padding: 2.4375rem 1.1875rem 0.875rem;
+  *padding-top: 1.1875rem;
   background-color: #fff;
-  border: 1px solid #ddd;
+  border: 0.0625rem solid #ddd;
   -webkit-border-radius: 4px;
      -moz-border-radius: 4px;
           border-radius: 4px;
+  -webkit-border-radius: 0.25rem;
+     -moz-border-radius: 0.25rem;
+          border-radius: 0.25rem;
 }
 
 /* Echo out a label for the example */
@@ -575,22 +681,32 @@ h2 + .row {
   content: "Example";
   position: absolute;
   top: -1px;
+  top: -0.0625rem;
   left: -1px;
+  left: -0.0625rem;
   padding: 3px 7px;
+  padding: 0.1875rem 0.4375rem;
   font-size: 12px;
+  font-size: 0.75rem;
   font-weight: bold;
   background-color: #f5f5f5;
   border: 1px solid #ddd;
+  border: 0.0625rem solid #ddd;
   color: #9da0a4;
   -webkit-border-radius: 4px 0 4px 0;
      -moz-border-radius: 4px 0 4px 0;
           border-radius: 4px 0 4px 0;
+  -webkit-border-radius: 0.25rem 0 0.25rem 0;
+     -moz-border-radius: 0.25rem 0 0.25rem 0;
+          border-radius: 0.25rem 0 0.25rem 0;
 }
 
 /* Remove spacing between an example and it's code */
 .bs-docs-example + .prettyprint {
   margin-top: -20px;
+  margin-top: 1.25rem;
   padding-top: 15px;
+  padding-top: 0.9375rem;
 }
 
 /* Tweak examples
@@ -608,6 +724,7 @@ h2 + .row {
 .bs-docs-example > .nav,
 .bs-docs-example blockquote {
   margin-bottom: 5px;
+  margin-bottom: 0.3125rem;
 }
 .bs-docs-example .pagination {
   margin-top: 0;
@@ -616,7 +733,7 @@ h2 + .row {
 .bs-navbar-bottom-example {
   z-index: 1;
   padding: 0;
-  height: 90px;
+  height: 5.625rem;
   overflow: hidden; /* cut the drop shadows off */
 }
 .bs-navbar-top-example .navbar-fixed-top,
@@ -628,6 +745,9 @@ h2 + .row {
   -webkit-border-radius: 0 0 4px 4px;
      -moz-border-radius: 0 0 4px 4px;
           border-radius: 0 0 4px 4px;
+  -webkit-border-radius: 0 0 0.25rem 0.25rem;
+     -moz-border-radius: 0 0 0.25rem 0.25rem;
+          border-radius: 0 0 0.25rem 0.25rem;
 }
 .bs-navbar-top-example:after {
   top: auto;
@@ -635,26 +755,30 @@ h2 + .row {
   -webkit-border-radius: 0 4px 0 4px;
      -moz-border-radius: 0 4px 0 4px;
           border-radius: 0 4px 0 4px;
+  -webkit-border-radius: 0 0.25rem 0 0.25rem;
+     -moz-border-radius: 0 0.25rem 0 0.25rem;
+          border-radius: 0 0.25rem 0 0.25rem;
 }
 .bs-navbar-bottom-example {
   -webkit-border-radius: 4px 4px 0 0;
      -moz-border-radius: 4px 4px 0 0;
           border-radius: 4px 4px 0 0;
+  -webkit-border-radius: 0.25rem 0.25rem 0 0;
+     -moz-border-radius: 0.25rem 0.25rem 0 0;
+          border-radius: 0.25rem 0.25rem 0 0;
 }
 .bs-navbar-bottom-example .navbar {
   margin-bottom: 0;
 }
 form.bs-docs-example {
   padding-bottom: 19px;
-}
-.bs-docs-example .lead {
-  font-size: 18px;
-  line-height: 24px;
+  padding-bottom: 1.1875rem;
 }
 
 /* Images */
 .bs-docs-example-images img {
   margin: 10px;
+  margin: 0.625rem;
   display: inline-block;
 }
 
@@ -662,16 +786,19 @@ form.bs-docs-example {
 .bs-docs-tooltip-examples {
   text-align: center;
   margin: 0 0 10px;
+  margin: 0 0 0.625rem;
   list-style: none;
 }
 .bs-docs-tooltip-examples li {
   display: inline;
   padding: 0 10px;
+  padding: 0 0.625rem;
 }
 
 /* Popovers */
 .bs-docs-example-popover {
   padding-bottom: 24px;
+  padding-bottom: 1.5rem;
   background-color: #f9f9f9;
 }
 .bs-docs-example-popover .popover {
@@ -679,7 +806,9 @@ form.bs-docs-example {
   display: block;
   float: left;
   width: 260px;
+  width: 16.25rem;
   margin: 20px;
+  margin: 1.25rem;
 }
 
 
@@ -713,6 +842,7 @@ form.bs-docs-example {
 ------------------------- */
 .responsive-utilities-test {
   margin-top: 5px;
+  margin-top: 0.3125rem;
   margin-left: 0;
   list-style: none;
   overflow: hidden; /* clear floats */
@@ -722,18 +852,26 @@ form.bs-docs-example {
   float: left;
   width: 25%;
   height: 43px;
+  height: 2.6825rem;
   font-size: 14px;
+  font-size: 0.875rem;
   font-weight: bold;
   line-height: 43px;
+  line-height: 2.6825rem;
   color: #999;
   text-align: center;
   border: 1px solid #ddd;
+  border: 0.0625rem solid #ddd;
   -webkit-border-radius: 4px;
      -moz-border-radius: 4px;
           border-radius: 4px;
+  -webkit-border-radius: 0.25rem;
+     -moz-border-radius: 0.25rem;
+          border-radius: 0.25rem;
 }
 .responsive-utilities-test li + li {
   margin-left: 10px;
+  margin-left: 0.625rem;
 }
 .responsive-utilities-test span {
   position: absolute;
@@ -741,14 +879,22 @@ form.bs-docs-example {
   left:   -1px;
   right:  -1px;
   bottom: -1px;
+  top:    -0.0625rem;
+  left:   -0.0625rem;
+  right:  -0.0625rem;
+  bottom: -0.0625rem;
   -webkit-border-radius: 4px;
      -moz-border-radius: 4px;
           border-radius: 4px;
+  -webkit-border-radius: 0.25rem;
+     -moz-border-radius: 0.25rem;
+          border-radius: 0.25rem;
 }
 .responsive-utilities-test span {
   color: #468847;
   background-color: #dff0d8;
   border: 1px solid #d6e9c6;
+  border: 0.0625rem solid #d6e9c6;
 }
 
 
@@ -756,55 +902,75 @@ form.bs-docs-example {
 /* Sidenav for Docs
 -------------------------------------------------- */
 
-/* prevent column from collapsing when affixing */
-.span3 {
-  min-height: 1px;
-}
-
 .bs-docs-sidenav {
   width: 228px;
+  width: 14.25rem;
   margin: 30px 0 0;
+  margin: 1.875rem 0 0;
   padding: 0;
   background-color: #fff;
   -webkit-border-radius: 6px;
      -moz-border-radius: 6px;
           border-radius: 6px;
+  -webkit-border-radius: 0.375rem;
+     -moz-border-radius: 0.375rem;
+          border-radius: 0.375rem;
   -webkit-box-shadow: 0 1px 4px rgba(0,0,0,.065);
      -moz-box-shadow: 0 1px 4px rgba(0,0,0,.065);
           box-shadow: 0 1px 4px rgba(0,0,0,.065);
+  -webkit-box-shadow: 0 0.0625rem 0.25rem rgba(0,0,0,.065);
+     -moz-box-shadow: 0 0.0625rem 0.25rem rgba(0,0,0,.065);
+          box-shadow: 0 0.0625rem 0.25rem rgba(0,0,0,.065);
 }
 .bs-docs-sidenav > li > a {
   display: block;
-  *width: 190px;
+  width: 190px \9;
+  width: 11.875rem \9;
   margin: 0 0 -1px;
+  margin: 0 0 -0.0625rem;
   padding: 8px 14px;
+  padding: 0.5rem 0.875rem;
   border: 1px solid #e5e5e5;
+  border: 0.0625rem solid #e5e5e5;
 }
 .bs-docs-sidenav > li:first-child > a {
   -webkit-border-radius: 6px 6px 0 0;
      -moz-border-radius: 6px 6px 0 0;
           border-radius: 6px 6px 0 0;
+  -webkit-border-radius: 0.375rem 0.375rem 0 0;
+     -moz-border-radius: 0.375rem 0.375rem 0 0;
+          border-radius: 0.375rem 0.375rem 0 0;
 }
 .bs-docs-sidenav > li:last-child > a {
   -webkit-border-radius: 0 0 6px 6px;
      -moz-border-radius: 0 0 6px 6px;
           border-radius: 0 0 6px 6px;
+  -webkit-border-radius: 0 0 0.375rem 0.375rem;
+     -moz-border-radius: 0 0 0.375rem 0.375rem;
+          border-radius: 0 0 0.375rem 0.375rem;
 }
 .bs-docs-sidenav > .active > a {
   position: relative;
   z-index: 2;
   padding: 9px 15px;
+  padding: 0.5625rem 0.9375rem;
   border: 0;
   text-shadow: 0 1px 0 rgba(0,0,0,.15);
+  text-shadow: 0 0.0625rem 0 rgba(0,0,0,.15);
   -webkit-box-shadow: inset 1px 0 0 rgba(0,0,0,.1), inset -1px 0 0 rgba(0,0,0,.1);
      -moz-box-shadow: inset 1px 0 0 rgba(0,0,0,.1), inset -1px 0 0 rgba(0,0,0,.1);
           box-shadow: inset 1px 0 0 rgba(0,0,0,.1), inset -1px 0 0 rgba(0,0,0,.1);
+  -webkit-box-shadow: inset 0.0625rem 0 0 rgba(0,0,0,.1), inset -0.0625rem 0 0 rgba(0,0,0,.1);
+     -moz-box-shadow: inset 0.0625rem 0 0 rgba(0,0,0,.1), inset -0.0625rem 0 0 rgba(0,0,0,.1);
+          box-shadow: inset 0.0625rem 0 0 rgba(0,0,0,.1), inset -0.0625rem 0 0 rgba(0,0,0,.1);
 }
 /* Chevrons */
 .bs-docs-sidenav .icon-chevron-right {
   float: right;
   margin-top: 2px;
+  margin-top: 0.125rem;
   margin-right: -6px;
+  margin-right: -0.375rem;
   opacity: .25;
 }
 .bs-docs-sidenav > li > a:hover {
@@ -820,11 +986,13 @@ form.bs-docs-example {
 }
 .bs-docs-sidenav.affix {
   top: 40px;
+  top: 2.5rem;
 }
 .bs-docs-sidenav.affix-bottom {
   position: absolute;
   top: auto;
   bottom: 270px;
+  bottom: 16.875rem;
 }
 
 
@@ -838,9 +1006,15 @@ form.bs-docs-example {
 @media (min-width: 1200px) {
   .bs-docs-container {
     max-width: 970px;
+    max-width: 60.625rem;
   }
   .bs-docs-sidenav {
     width: 258px;
+    width: 16.125rem;
+  }
+  .bs-docs-sidenav > li > a {
+    width: 230px \9; /* Override the previous IE8-9 hack */
+    width: 14.375rem \9; /* Override the previous IE8-9 hack */
   }
 }
 
@@ -852,19 +1026,23 @@ form.bs-docs-example {
     float: left;
     margin-left: 0;
     padding-left: 10px;
+    padding-left: 0.625rem;
     padding-right: 10px;
+    padding-right: 0.625rem;
   }
 
   /* Inline-block quick links for more spacing */
   .quick-links li {
     display: inline-block;
     margin: 5px;
+    margin: 0.3125rem;
   }
 
   /* When affixed, space properly */
   .bs-docs-sidenav {
     top: 0;
     margin-top: 30px;
+    margin-top: 1.875rem;
     margin-right: 0;
   }
 }
@@ -879,11 +1057,14 @@ form.bs-docs-example {
   /* Widen masthead and social buttons to fill body padding */
   .jumbotron {
     margin-top: -20px; /* Offset bottom margin on .navbar */
+    margin-top: -1.25rem; /* Offset bottom margin on .navbar */
   }
   /* Adjust sidenav width */
   .bs-docs-sidenav {
     width: 166px;
+    width: 10.375rem;
     margin-top: 20px;
+    margin-top: 1.25rem;
   }
   .bs-docs-sidenav.affix {
     top: 0;
@@ -892,7 +1073,7 @@ form.bs-docs-example {
 
 /* Tablet
 ------------------------- */
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   /* Remove any padding from the body */
   body {
     padding-top: 0;
@@ -901,33 +1082,43 @@ form.bs-docs-example {
   /* Widen masthead and social buttons to fill body padding */
   .jumbotron {
     padding: 40px 20px;
+    padding: 2.5rem 1.25rem;
     margin-top:   -20px; /* Offset bottom margin on .navbar */
     margin-right: -20px;
     margin-left:  -20px;
+    margin-top:   -1.25rem; /* Offset bottom margin on .navbar */
+    margin-right: -1.25rem;
+    margin-left:  -1.25rem;
   }
   .masthead h1 {
     font-size: 90px;
+    font-size: 5.625rem;
   }
   .masthead p,
   .masthead .btn {
     font-size: 24px;
+    font-size: 1.5rem;
   }
   .marketing .span4 {
     margin-bottom: 40px;
+    margin-bottom: 2.5rem;
   }
   .bs-docs-social {
     margin: 0 -20px;
+    margin: 0 -1.25rem;
   }
 
   /* Space out the show-grid examples */
   .show-grid [class*="span"] {
     margin-bottom: 5px;
+    margin-bottom: 0.3125rem;
   }
 
   /* Sidenav */
   .bs-docs-sidenav {
     width: auto;
     margin-bottom: 20px;
+    margin-bottom: 1.25rem;
   }
   .bs-docs-sidenav.affix {
     position: static;
@@ -941,9 +1132,14 @@ form.bs-docs-example {
     margin-right: -20px;
     padding-left: 20px;
     padding-right: 20px;
+    margin-left: -1.25rem;
+    margin-right: -1.25rem;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
   }
   .footer p {
     margin-bottom: 9px;
+    margin-bottom: 0.5625rem;
   }
 }
 
@@ -962,11 +1158,13 @@ form.bs-docs-example {
 
   /* Downsize the jumbotrons */
   .jumbotron h1 {
-    font-size: 60px;
+    font-size: 45px;
+    font-size: 2.8125rem;
   }
   .jumbotron p,
   .jumbotron .btn {
-    font-size: 20px;
+    font-size: 18px;
+    font-size: 1.125rem;
   }
   .jumbotron .btn {
     display: block;
@@ -981,7 +1179,12 @@ form.bs-docs-example {
 
   /* Marketing on home */
   .marketing h1 {
-    font-size: 40px;
+    font-size: 30px;
+    font-size: 1.875rem;
+  }
+  .marketing-byline {
+    font-size: 18px;
+    font-size: 1.125rem;
   }
 
   /* center example sites */
@@ -992,11 +1195,14 @@ form.bs-docs-example {
     float: none;
     display: block;
     max-width: 280px;
+    max-width: 17.5rem;
     margin: 0 auto 18px;
+    margin: 0 auto 1.125rem;
     text-align: center;
   }
   .example-sites .thumbnail > img {
     max-width: 270px;
+    max-width: 16.875rem;
   }
 
   /* Do our best to make tables work in narrow viewports */
@@ -1015,6 +1221,13 @@ form.bs-docs-example {
     left: auto;
   }
 
+  /* Tighten up footer */
+  .footer {
+    padding-top: 20px;
+    padding-top: 1.25rem;
+    padding-bottom: 20px;
+    padding-bottom: 1.25rem;
+  }
   /* Unfloat the back to top in footer to prevent odd text wrapping */
   .footer .pull-right {
     float: none;
